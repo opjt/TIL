@@ -1,6 +1,11 @@
 ---
 title: 테스트 글
 description: 설명글
+sidebar: auto
+tags:
+  - configuration
+  - theme
+  - indexing
 ---
 
 # 안녕하세요 테스트 글입니다

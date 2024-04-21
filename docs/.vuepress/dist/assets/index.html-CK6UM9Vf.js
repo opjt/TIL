@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a,a as n}from"./app-dOba8t3D.js";const o={},s=n("p",null,"asd",-1),c=[s];function l(r,_){return t(),a("div",null,c)}const i=e(o,[["render",l],["__file","index.html.vue"]]),m=JSON.parse('{"path":"/ETC/","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":null},"filePathRelative":"ETC/README.md"}');export{i as comp,m as data};

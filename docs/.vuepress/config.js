@@ -6,9 +6,13 @@ import path from 'path'
 
 export default defineUserConfig({
     bundler: viteBundler(),
+    title: 'Today I Learned',
     theme: defaultTheme({
         // default theme config
         sidebar: getSidebar(),
+        contributors: false,
+        sidebarDepth: 1,
+        
         navbar: [
             {
                 text: 'Home',
@@ -36,13 +40,23 @@ function getSidebar() {
             if (mdFiles.length === 0) {
                 return; // 폴더 내에 .md 파일이 없으면 건너뜁니다.
             }
-            const children = mdFiles.map(mdFile => `/${folder}/${mdFile}`);
-            sidebar.push({
+            const hasReadme = mdFiles.includes('README.md');
+
+            const children = mdFiles
+            .filter(mdFile => mdFile !== 'README.md')
+            .map(mdFile => `/${folder}/${mdFile}`);
+            const sidebarItem = {
                 text: folder,
                 children
-            });
+            };
+
+            // README.md 파일이 있는 경우 link에 해당 폴더로의 링크 추가
+            sidebarItem.link = hasReadme ? `/${folder}/` : undefined;
+
+            sidebar.push(sidebarItem);
         }
     });
-    console.log(sidebar)
+
+    console.log(sidebar);
     return sidebar;
 }

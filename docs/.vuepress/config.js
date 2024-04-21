@@ -22,7 +22,7 @@ export default defineUserConfig({
 
     }),
     // 기타 설정 옵션
-    base: "/til/",
+    base: "/TIL/",
 
 })
 

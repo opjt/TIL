@@ -1,7 +1,6 @@
 ---
 title: 테스트 글
 description: 설명글
-sidebar: auto
 tags:
   - configuration
   - theme

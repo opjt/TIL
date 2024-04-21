@@ -1,7 +1,6 @@
 ---
 title: first post
 description: TuT
-sidebar: auto
 ---
 
 # 첫면접

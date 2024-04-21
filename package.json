@@ -2,10 +2,14 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "^2.0.0-rc.9",
     "@vuepress/theme-default": "^2.0.0-rc.25",
+    "postcss-load-config": "4.0.0",
     "vuepress": "^2.0.0-rc.9"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "node": "^18.20.2"
   }
 }

@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./app-DXQG32SM.js";const a={};function r(c,n){return t(),o("div")}const s=e(a,[["render",r],["__file","foo.html.vue"]]),_=JSON.parse('{"path":"/group/foo.html","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1713748261000},"filePathRelative":"group/foo.md"}');export{s as comp,_ as data};

@@ -18,6 +18,7 @@ export default defineUserConfig({
                 text: 'Home',
                 link: '/',
             },
+            { text: 'Github', link: 'https://github.com/opjt/til' },
         ],
 
     }),

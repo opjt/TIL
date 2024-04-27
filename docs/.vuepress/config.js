@@ -1,10 +1,18 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
+import { searchPlugin } from '@vuepress/plugin-search'
 import { defineUserConfig } from 'vuepress'
 import fs from 'fs'
 import path from 'path'
 
 export default defineUserConfig({
+    plugins: [
+        // https://v2.vuepress.vuejs.org/reference/plugin/search.html#search
+        searchPlugin({
+          maxSuggestions: 15,
+
+        })
+    ],
     bundler: viteBundler(),
     title: 'Today I Learned',
     theme: defaultTheme({

@@ -17,7 +17,11 @@ export default defineUserConfig({
     title: 'Today I Learned',
     theme: defaultTheme({
         // default theme config
-        sidebar: getSidebar(),
+        sidebar: [
+            getChild("vuePress",'vuepress'),
+            getChild("알고리즘",'algorithm'),
+            getChild("버그픽스",'errorZip'),
+            getChild("자격증공부",'license')],
         contributors: false,
         sidebarDepth: 1,
         
@@ -40,7 +44,7 @@ function getSidebar() {
 
     const docDir = path.resolve(__dirname, '../'); // docs 디렉토리의 경로
     const folders = fs.readdirSync(docDir);
-
+    
     folders.forEach(folder => {
         const folderPath = path.join(docDir, folder);
         if (fs.statSync(folderPath).isDirectory()) {
@@ -68,4 +72,32 @@ function getSidebar() {
 
     console.log(sidebar);
     return sidebar;
+}
+
+function getChild(name, dirpath) {
+
+    const docDir = path.resolve(__dirname, '../'); // docs 디렉토리의 경로
+    const folderPath = path.join(docDir, dirpath);
+    if (!fs.statSync(folderPath).isDirectory()) {
+        return;
+    }
+    
+    const files = fs.readdirSync(folderPath);
+    const mdFiles = files.filter(file => path.extname(file) === '.md');
+    if (mdFiles.length === 0) {
+        return; // 폴더 내에 .md 파일이 없으면 건너뜁니다.
+    }
+    const hasReadme = mdFiles.includes('README.md');
+
+    const children = mdFiles
+    .filter(mdFile => mdFile !== 'README.md')
+    .map(mdFile => `/${dirpath}/${mdFile}`);
+    const sidebarItem = {
+        text: name,
+        children
+    };
+
+    // README.md 파일이 있는 경우 link에 해당 폴더로의 링크 추가
+    sidebarItem.link = hasReadme ? `/${dirpath}/` : undefined;
+    return sidebarItem;
 }

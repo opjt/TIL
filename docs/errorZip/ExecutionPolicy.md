@@ -2,6 +2,7 @@
 title: powerShell ExecutionPolicy정책
 ---
 
+# powerShell ExecutionPolicy정책
 
 ```
 yarn : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\Users\kiaho\AppData\Roaming\npm\yarn.ps1 파일을 로드할 수 없습니다. 자세한 내용은 about_Execution_Policies(https://go.microsoft.com/fwlink/?LinkID=13 

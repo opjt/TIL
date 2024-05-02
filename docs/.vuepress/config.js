@@ -21,7 +21,9 @@ export default defineUserConfig({
             getChild("vuePress",'vuepress'),
             getChild("알고리즘",'algorithm'),
             getChild("버그픽스",'errorZip'),
-            getChild("자격증공부",'license')],
+            getChild("자격증공부",'license'),
+            
+        ],
         contributors: false,
         sidebarDepth: 1,
         
@@ -94,7 +96,8 @@ function getChild(name, dirpath) {
     .map(mdFile => `/${dirpath}/${mdFile}`);
     const sidebarItem = {
         text: name,
-        children
+        children,
+        collapsible: true,
     };
 
     // README.md 파일이 있는 경우 link에 해당 폴더로의 링크 추가

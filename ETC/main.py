@@ -1,18 +1,13 @@
-def dfs(start):
-    visited[start] = 1
-    for num in list[start]:
-        if visited[num] != 1:
-            dfs(num)
+count, num1 = map(int, input().split())
+numbers = []
 
-n = int(input()) # 컴퓨터 수
-m = int(input()) # 연결 수
+for i in range(count):
+   numbers.append(int(input()))
 
-list = [[] for i in range (n+1)]
-visited = [0] * (n+1)
-for i in range(m):
-    a,b = map(int, input().split())
-    list[a].append(b)
-    list[b].append(a)
+# print("max : " + str(max))
 
-dfs(1)
-print(visited.count(1)-1)
+totalCount = 0
+for i in reversed(range(count)):
+    totalCount += num1//numbers[i]
+    num1 = num1 % numbers[i]
+print(totalCount)

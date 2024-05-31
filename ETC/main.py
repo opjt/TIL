@@ -1,43 +1,17 @@
-N = int(input())
-
-meetings = []
-
-for _ in range(N):
-    start, end = map(int, input().split())
-    meetings.append((start, end))
-
-meetings.sort(key=lambda x: (x[1], x[0]))
-
-count = 0
-last_end_time = 0
-
-for x, y in meetings:
-    print(str(x) + " " + str(y))
-
-for start, end in meetings:
-    if start >= last_end_time:
-        count += 1
-        last_end_time = end
-
-print(count)
-
-# for i in range(len(lng)):
-#     print(lng[i])
+def hanoi(num, fromm, to, other):  #원반 수, 출발지, 목적지, 나머지
+    if num == 0:
+        return
+    hanoi(num - 1, fromm, other, to)  # 1번째 -> 받아온 원반 갯수보다 하나적은 원반들을 목적지가 아닌 곳으로 이동
+    move.append([fromm, to])  # 2번째 -> 마지막 원반을 목적지로 이동
+    hanoi(num - 1, other, to, fromm) #3번째 -> 다른 곳으로 옮겼던 원반들을 그 위에 얹는다.
 
 
-# (3,5) (1,2) (4,7) (5,8)
+n = int(input())
+move = []
 
+hanoi(n, 1, 3, 2) #하노이탑의 함수를 원반 갯수만큼 실행
 
-# count, num1 = map(int, input().split())
-# numbers = []
+print(len(move)) #움직이는 횟수 출력
 
-# for i in range(count):
-#    numbers.append(int(input()))
-
-# # print("max : " + str(max))
-
-# totalCount = 0
-# for i in reversed(range(count)):
-#     totalCount += num1//numbers[i]
-#     num1 = num1 % numbers[i]
-# print(totalCount)
+for i in range(len(move)):
+    print(move[i][0], move[i][1])

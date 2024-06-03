@@ -19,6 +19,7 @@ export default defineUserConfig({
         // default theme config
         sidebar: [
             getChild("vuePress",'vuepress'),
+            getChild("Spring",'Spring'),
             getChild("알고리즘",'algorithm'),
             getChild("버그픽스",'errorZip'),
             getChild("자격증공부",'license'),

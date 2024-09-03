@@ -78,24 +78,45 @@ function getSidebar() {
     return sidebar;
 }
 
-function getChild(name, dirpath) {
-
+function getChild(name, dirpath) { //TODO: 리팩토리 필요
     const docDir = path.resolve(__dirname, '../'); // docs 디렉토리의 경로
-    const folderPath = path.join(docDir, dirpath);
-    if (!fs.statSync(folderPath).isDirectory()) {
-        return;
-    }
-    
-    const files = fs.readdirSync(folderPath);
-    const mdFiles = files.filter(file => path.extname(file) === '.md');
-    if (mdFiles.length === 0) {
-        return; // 폴더 내에 .md 파일이 없으면 건너뜁니다.
-    }
-    const hasReadme = mdFiles.includes('README.md');
+    const startPath = path.join(docDir, dirpath);
 
-    const children = mdFiles
-    .filter(mdFile => mdFile !== 'README.md')
-    .map(mdFile => `/${dirpath}/${mdFile}`);
+    if (!fs.statSync(startPath).isDirectory()) {
+        return { text: name, children: [] }; // 폴더가 아니면 빈 children 배열 반환
+    }
+
+    const stack = [dirpath]; // 탐색할 디렉토리 경로들을 저장할 스택
+    let children = [];
+
+    while (stack.length > 0) {
+        const currentDir = stack.pop(); // 현재 탐색할 디렉토리 경로
+        const folderPath = path.join(docDir, currentDir);
+
+        const files = fs.readdirSync(folderPath);
+        const mdFiles = files.filter(file => path.extname(file) === '.md');
+        const subDirs = files.filter(file => fs.statSync(path.join(folderPath, file)).isDirectory());
+
+        // 현재 디렉토리의 .md 파일들을 추가
+        children = children.concat(
+            mdFiles
+                .filter(mdFile => mdFile !== 'README.md')
+                .map(mdFile => `/${currentDir}/${mdFile}`)
+        );
+
+        // 하위 디렉토리를 스택에 추가
+        subDirs.forEach(subDir => {
+            stack.push(path.join(currentDir, subDir));
+        });
+    }
+
+    // .md 파일이 없으면 빈 children 배열 반환
+    if (children.length === 0) {
+        return { text: name, children: [] };
+    }
+
+    const hasReadme = fs.existsSync(path.join(startPath, 'README.md'));
+
     const sidebarItem = {
         text: name,
         children,
@@ -104,5 +125,6 @@ function getChild(name, dirpath) {
 
     // README.md 파일이 있는 경우 link에 해당 폴더로의 링크 추가
     sidebarItem.link = hasReadme ? `/${dirpath}/` : undefined;
+
     return sidebarItem;
 }

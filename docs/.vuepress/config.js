@@ -18,12 +18,12 @@ export default defineUserConfig({
     theme: defaultTheme({
         // default theme config
         sidebar: [
-            getChild("vuePress",'vuepress'),
-            getChild("DAILY🌎",'daily'),
-            getChild("Spring🍃",'Spring'),
-            getChild("알고리즘💭",'algorithm'),
-            getChild("버그픽스🐞",'errorZip'),
-            getChild("자격증공부📋",'license'),
+            getChild("vuePress",'vuepress',true),
+            getChild("DAILY🌎",'daily',false),
+            getChild("Spring🍃",'Spring',false),
+            getChild("알고리즘💭",'algorithm',false),
+            getChild("버그픽스🐞",'errorZip',false),
+            getChild("자격증공부📋",'license',false),
             
         ],
         contributors: false,
@@ -78,7 +78,7 @@ function getSidebar() {
     return sidebar;
 }
 
-function getChild(name, dirpath) { //TODO: 리팩토리 필요
+function getChild(name, dirpath, hasReadme) { //TODO: 리팩토리 필요
     const docDir = path.resolve(__dirname, '../'); // docs 디렉토리의 경로
     const startPath = path.join(docDir, dirpath);
 
@@ -94,7 +94,7 @@ function getChild(name, dirpath) { //TODO: 리팩토리 필요
         const folderPath = path.join(docDir, currentDir);
 
         const files = fs.readdirSync(folderPath);
-        const mdFiles = files.filter(file => path.extname(file) === '.md');
+        const mdFiles = files.filter(file => path.extname(file) === '.md').reverse();
         const subDirs = files.filter(file => fs.statSync(path.join(folderPath, file)).isDirectory());
 
         // 현재 디렉토리의 .md 파일들을 추가
@@ -109,22 +109,13 @@ function getChild(name, dirpath) { //TODO: 리팩토리 필요
             stack.push(path.join(currentDir, subDir));
         });
     }
-
-    // .md 파일이 없으면 빈 children 배열 반환
-    if (children.length === 0) {
-        return { text: name, children: [] };
-    }
-
-    const hasReadme = fs.existsSync(path.join(startPath, 'README.md'));
-
+    
     const sidebarItem = {
         text: name,
         children,
+        link: hasReadme ? `/${dirpath}/` : undefined,
         collapsible: true,
     };
-
-    // README.md 파일이 있는 경우 link에 해당 폴더로의 링크 추가
-    sidebarItem.link = hasReadme ? `/${dirpath}/` : undefined;
 
     return sidebarItem;
 }

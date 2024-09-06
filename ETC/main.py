@@ -1,16 +1,10 @@
-def solution(scoville, K):
-    answer =0
-    sortt = sorted(scoville)
-    for i in range(len(sortt)):
-        if(sortt[0] < K) :
-            if(len(sortt) == 1 ):
-                return -1
-            answer += 1
-            sortt[1] = sortt[0] + sortt[1] * 2
-        else:
-            return answer
+def solution(list):
+    answer = []
+    for idx,val in enumerate(list):
+        if(answer[-1:] != [val]):
+            answer.append(val)
+
     return answer
+    
 
-print(solution([1, 2, 3, 9, 10, 12],7))
-
-
+print(solution([1,1,3,3,0,1,1]))

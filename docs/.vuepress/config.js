@@ -18,16 +18,27 @@ export default defineUserConfig({
     theme: defaultTheme({
         // default theme config
         sidebar: [
-            getChild("vuePress",'vuepress',true),
-            getChild("DAILY🌎",'daily',false),
-            getChild("Spring🍃",'Spring',false),
-            getChild("알고리즘💭",'algorithm',false),
-            getChild("버그픽스🐞",'errorZip',false),
-            getChild("자격증공부📋",'license',false),
+            {
+                text:'vuePress',
+                expanded: false,
+                collapsible: true,
+                children: getChild("vuePress"),
+                link: '/vuepress/'
+            },
+            {
+                text:'DAILY🌎',
+                collapsible: false,
+                children: getChild("daily"),
+                // link: '/daily/'
+            },
+            // getChild("Spring🍃",'Spring',false),
+            // getChild("알고리즘💭",'algorithm',false),
+            // getChild("버그픽스🐞",'errorZip',false),
+            // getChild("자격증공부📋",'license',false),
             
         ],
         contributors: false,
-        sidebarDepth: 1,
+        sidebarDepth: 0,
         
         navbar: [
             {
@@ -43,79 +54,35 @@ export default defineUserConfig({
 
 })
 
-function getSidebar() {
-    const sidebar = [];
 
-    const docDir = path.resolve(__dirname, '../'); // docs 디렉토리의 경로
-    const folders = fs.readdirSync(docDir);
-    
-    folders.forEach(folder => {
-        const folderPath = path.join(docDir, folder);
-        if (fs.statSync(folderPath).isDirectory()) {
-            const files = fs.readdirSync(folderPath);
-            const mdFiles = files.filter(file => path.extname(file) === '.md');
-            if (mdFiles.length === 0) {
-                return; // 폴더 내에 .md 파일이 없으면 건너뜁니다.
-            }
-            const hasReadme = mdFiles.includes('README.md');
 
-            const children = mdFiles
-            .filter(mdFile => mdFile !== 'README.md')
-            .map(mdFile => `/${folder}/${mdFile}`);
-            const sidebarItem = {
-                text: folder,
-                children
-            };
+function getChild(dirpath) {
+    const docDir = path.resolve(__dirname, '../');
 
-            // README.md 파일이 있는 경우 link에 해당 폴더로의 링크 추가
-            sidebarItem.link = hasReadme ? `/${folder}/` : undefined;
-
-            sidebar.push(sidebarItem);
-        }
-    });
-
-    console.log(sidebar);
-    return sidebar;
-}
-
-function getChild(name, dirpath, hasReadme) { //TODO: 리팩토리 필요
-    const docDir = path.resolve(__dirname, '../'); // docs 디렉토리의 경로
-    const startPath = path.join(docDir, dirpath);
-
-    if (!fs.statSync(startPath).isDirectory()) {
-        return { text: name, children: [] }; // 폴더가 아니면 빈 children 배열 반환
-    }
-
-    const stack = [dirpath]; // 탐색할 디렉토리 경로들을 저장할 스택
-    let children = [];
-
-    while (stack.length > 0) {
-        const currentDir = stack.pop(); // 현재 탐색할 디렉토리 경로
+    function buildTree(currentDir) {
         const folderPath = path.join(docDir, currentDir);
+        
+        if (!fs.statSync(folderPath).isDirectory()) {
+            return []; // 파일일 경우 빈 배열 반환
+        }
 
         const files = fs.readdirSync(folderPath);
-        const mdFiles = files.filter(file => path.extname(file) === '.md').reverse();
+        const mdFiles = files.filter(file => path.extname(file) === '.md');
         const subDirs = files.filter(file => fs.statSync(path.join(folderPath, file)).isDirectory());
 
-        // 현재 디렉토리의 .md 파일들을 추가
-        children = children.concat(
-            mdFiles
-                .filter(mdFile => mdFile !== 'README.md')
-                .map(mdFile => `/${currentDir}/${mdFile}`)
-        );
-
-        // 하위 디렉토리를 스택에 추가
+        let children = mdFiles.filter(mdFile => mdFile !== 'README.md').map(mdFile => `/${currentDir}/${mdFile}`);
+        
         subDirs.forEach(subDir => {
-            stack.push(path.join(currentDir, subDir));
+            const subDirPath = path.join(currentDir, subDir);
+            children.push({
+                text: subDir,
+                collapsible: true,
+                children: buildTree(subDirPath)
+            });
         });
-    }
-    
-    const sidebarItem = {
-        text: name,
-        children,
-        link: hasReadme ? `/${dirpath}/` : undefined,
-        collapsible: true,
-    };
 
-    return sidebarItem;
+        return children.reverse();
+    }
+
+    return buildTree(dirpath);
 }

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://opjt.github.io/TIL/sitemap.xml
+ 
+Sitemap: https://opjt.github.io/TIL/TIL/sitemap.xml

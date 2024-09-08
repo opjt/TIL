@@ -1,6 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { sitemapPlugin } from '@vuepress/plugin-sitemap';
 import { defineUserConfig } from 'vuepress'
 import fs from 'fs'
 import path from 'path'
@@ -11,7 +12,10 @@ export default defineUserConfig({
         searchPlugin({
           maxSuggestions: 15,
 
-        })
+        }),
+        sitemapPlugin({
+            hostname: "https://opjt.github.io/TIL/"
+          }),
     ],
     bundler: viteBundler(),
     title: 'Today I Learned',
@@ -22,7 +26,7 @@ export default defineUserConfig({
                 text:'vuePress',
                 expanded: false,
                 collapsible: true,
-                children: getChild("vuePress"),
+                children: getChild("vuepress"),
                 link: '/vuepress/'
             },
             {

@@ -1,10 +1,14 @@
-def solution(list):
-    answer = []
-    for idx,val in enumerate(list):
-        if(answer[-1:] != [val]):
-            answer.append(val)
-
-    return answer
+def solution(numbers, target):
+    def dfs(type, i, sum):
+        print(str(type) + str(i) + " " + str(sum))
+        if (i == len(numbers)): 
+            return 1 if sum == target  else 0
+        
+        add = dfs("add", i + 1, sum + numbers[i])
+        subtract = dfs("sub", i + 1, sum - numbers[i])
+        
+        return add + subtract
+    return dfs("str", 0, 0)
     
 
-print(solution([1,1,3,3,0,1,1]))
+print(solution([4, 1, 2, 1],4))

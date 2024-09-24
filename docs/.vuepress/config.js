@@ -35,6 +35,12 @@ export default defineUserConfig({
                 children: getChild("daily"),
                 // link: '/daily/'
             },
+            {
+                text:'알고리즘 문제🧪',
+                collapsible: false,
+                children: getChild("algorithm"),
+                // link: '/daily/'
+            },
             // getChild("Spring🍃",'Spring',false),
             // getChild("알고리즘💭",'algorithm',false),
             // getChild("버그픽스🐞",'errorZip',false),

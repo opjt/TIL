@@ -1,14 +1,11 @@
-def solution(numbers, target):
-    def dfs(type, i, sum):
-        print(str(type) + str(i) + " " + str(sum))
-        if (i == len(numbers)): 
-            return 1 if sum == target  else 0
-        
-        add = dfs("add", i + 1, sum + numbers[i])
-        subtract = dfs("sub", i + 1, sum - numbers[i])
-        
-        return add + subtract
-    return dfs("str", 0, 0)
-    
+def solution(phone_book):
+    answer = True
+    phone_book.sort()
+    for i in range(len(phone_book) -1):
+        if(phone_book[i] == phone_book[i+1][:len(phone_book[i])]):
+            return False
 
-print(solution([4, 1, 2, 1],4))
+    return answer
+
+
+print(solution(["119", "97674223", "1195524421"]))

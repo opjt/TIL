@@ -1,0 +1,49 @@
+# VitePress 사이트를 GitHub Pages에 빌드하고 배포하는 샘플 워크플로우
+#
+name: VitePress 사이트를 Pages에 배포
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/**
+      - .github/workflows/docs.yml
+      - package.json
+      - package-lock.json
+  # Actions 탭에서 이 워크플로우를 수동으로 실행할 수 있게 합니다.
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  # 빌드 작업
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # lastUpdated가 활성화되지 않은 경우 필요하지 않음
+      - uses: pnpm/action-setup@v3 # pnpm을 사용하는 경우 주석 해제
+        with:
+          version: 9
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm # 또는 pnpm / yarn
+      - name: Install dependencies
+        run: pnpm install # 또는 pnpm install / yarn install / bun install
+      - name: Build with VitePress
+        run: pnpm docs:build # 또는 pnpm docs:build / yarn docs:build / bun run docs:build
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist  # 빌드 결과물 경로
+          publish_branch: gh-pages           # 배포 브랜치 지정
+          
+
+ 

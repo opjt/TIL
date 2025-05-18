@@ -8,6 +8,7 @@ const vitePressOptions: UserConfig = {
   // VitePress의 옵션
   title: "TIL",
   outDir: '../dist',
+  lastUpdated: true,
   head: [
     ['link', {rel: 'icon', href: '/favicon.ico'}]
   ],
@@ -31,9 +32,9 @@ const vitePressSidebarConfig: VitePressSidebarOptions = {
 	capitalizeFirst: true,
 	underscoreToSpace: true,
 	manualSortFileNameByPriority: ['instructions.md'],
-	useTitleFromFileHeading: true,
+  excludeFilesByFrontmatterFieldName: "hide", //hide 옵션이 켜져있는 파일 disable
+	useTitleFromFileHeading: true, 
 	useTitleFromFrontmatter: true,
-	useFolderLinkFromIndexFile: true
 };
 
 // https://vitepress.dev/reference/site-config

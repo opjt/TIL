@@ -21,19 +21,18 @@ viper.GetString("APP.GO")
 
 환경변수에 `APP_GO` 라는 키가 있을때 위 메서드를 사용하면 `APP.GO`로 불러올 수 있게 합니다.  
 
-
 ## 환경변수와 중첩 구조체 `Unmarshal`
 
 `viper.Unmarshal(&env)`를 사용할 때, 구성 파일(`.env.yaml`, `.json`, `.toml` 등)을 `viper.ReadInConfig()`로 읽은 경우에는 **중첩 구조체**도 자동으로 매핑됩니다:
 
 ```go
 type Env struct {
-	App App
-	Aws Aws `mapstructure:"AWS"`
+    App App
+    Aws Aws `mapstructure:"AWS"`
 }
 
 type Aws struct {
-	Port string `mapstructure:"PORT"`
+    Port string `mapstructure:"PORT"`
 }
 ```
 

@@ -12,7 +12,7 @@ hero:
       link: /instructions
     - theme: alt
       text: View on Github
-      link: https://github.com/opjt/til
+      link: https://github.com/opjt/opjt.github.io
 
 features:
   - icon: 🛠️

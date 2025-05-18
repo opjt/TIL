@@ -9,7 +9,7 @@ const vitePressOptions: UserConfig = {
   title: "TIL",
   outDir: '../dist',
   head: [
-    ['link', {rel: 'icon', href: '/til/favicon.ico'}]
+    ['link', {rel: 'icon', href: '/favicon.ico'}]
   ],
   themeConfig: {
     nav: [

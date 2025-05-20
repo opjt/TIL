@@ -22,8 +22,12 @@ const vitePressOptions: UserConfig = {
     ],
     search: {
       provider: 'local'
-    }
-  }
+    },
+    outline:  {
+      level: [1,3]
+    },
+  },
+   
 };
 
 const vitePressSidebarConfig: VitePressSidebarOptions = {

@@ -1,6 +1,6 @@
 # Uber-fx DI framework
 
-> `fx`는 `Uber`에서 만든 의존성 주입 프레임워크 입니다.
+> `fx`는 `Uber`에서 만든 [의존성 주입](../../Architecture/di.md) 프레임워크 입니다.
 > [https://uber-go.github.io/fx/index.html](https://uber-go.github.io/fx/index.html)
 
 ## Why fx

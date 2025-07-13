@@ -35,7 +35,6 @@ const vitePressSidebarConfig: VitePressSidebarOptions = {
 	collapseDepth: 2,
 	capitalizeFirst: true,
 	underscoreToSpace: true,
-	manualSortFileNameByPriority: ['instructions.md'],
   excludeFilesByFrontmatterFieldName: "hide", //hide 옵션이 켜져있는 파일 disable
 	useTitleFromFileHeading: true, 
 	useTitleFromFrontmatter: true,

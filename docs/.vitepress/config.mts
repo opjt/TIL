@@ -8,6 +8,7 @@ const vitePressOptions: UserConfig = {
   // VitePress의 옵션
   title: "TIL",
   outDir: '../dist',
+  base: '/til/',
   lastUpdated: true,
   head: [
     ['link', {rel: 'icon', href: '/favicon.ico'}]

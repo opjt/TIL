@@ -18,7 +18,8 @@ order: 2
 
 ## ⚙️ General Topics
 
-- [DI](~/di.md)— di가 뭐에요?
+- [ldd, shared lib](~/linux_ldd.md) - 의존성 지옥
+- [DI](~/di.md) — di가 뭐에요?
 - [MSA](~/msa.md) — msa를 알아봅시다
 - [shell](~/shell.md) — 로그인쉘 비로그인쉘 차이를 아시나요
-- [socket](~/socket.md) — 소켓이 뭔데 웹소켓이랑 다른건가요?
+- [socket](~/socket.md) — 소켓? 웹소켓 말씀하시는 건가요?

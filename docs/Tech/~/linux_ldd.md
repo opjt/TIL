@@ -31,3 +31,29 @@ $ ldd /usr/bin/ls
 ::: info libc.so.6가 뭔가요?
 `libc.so.6`는 **glibc(=GNU C Library)** 의 핵심적인 부분 중 하나로 C언어로 작성된 프로그램이 동작하는데 필요한 가장 기본적인 기능을 담고 있음.
 :::
+
+## 동적 링커 (dynamic Linker)
+
+ELF 실행 파일을 실행하면, 커널이 바로 `main()`을 호출하지 않고  
+먼저 동적 링커(`ex) ld-linux-x86-64.so.2`)를 실행합니다.  
+
+동적 링커는 이와 같은 일을 합니다:
+
+1. 프로그램이 의존하는 `.so` 목록을 확인
+2. 각 `.so`를 어디서 찾을지 탐색
+3. 메모리에 로드하고 심볼 연결 수행
+4. 준비가 끝나면 `main()` 함수 호출
+
+## LD_LIBRARY_PATH 란?
+
+`LD_LIBRARY_PATH`는 **동적 링커**가 라이브러리를 탐색할 때 참고하는 환경 변수입니다.  
+즉, 표준 시스템 디렉터리(`lib, usr/lib 등`)보다 우선적으로 탐색됩니다.  
+
+``` bash
+export LD_LIBRARY_PATH=/usr/local/lib:/opt/mylibs
+./myapp
+```
+
+위와 같이 설정하면 `myapp`를 실행할 때 링커는 `/usr/local/lib`, `/opt/mylibs` 경로에서 필요한 `.so` 파일을 우선적으로 찾습니다.  
+
+

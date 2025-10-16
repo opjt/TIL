@@ -1,8 +1,10 @@
 # TIL
 
-**어제의 나보다 더 나은 사람이 되기 위해**
+> Today I Learned
 
-- 다양한 분야에서 배우고 실습한 내용을 정리해요
+- 다양한 기술 분양에서 배우는 사소한 것들에 대한 기록 모음이에요
 - 보다 깊이 있는 고찰이나 공유하고 싶은 내용은 별도 블로그로 포스팅해요
 
-이 페이지는 [vitePress](https://vitepress.dev/)로 제작되었습니다
+[opjt.github.io/til](https://opjt.github.io/til/Tech/tech_index.html)에서 검색기능을 이용할 수 있어요  
+
+

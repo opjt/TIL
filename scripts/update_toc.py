@@ -35,7 +35,7 @@ for f, _ in files_sorted:
     relative_path = f.relative_to(readme_path.parent).as_posix()
     toc_lines.append(f"- [{title}]({relative_path})\n")
 
-toc_lines.append(end_marker + "\n")
+toc_lines.append(end_marker)
 
 # --- 기존 README 읽기 ---
 with open(readme_path, "r", encoding="utf-8") as f:

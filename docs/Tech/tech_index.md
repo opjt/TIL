@@ -8,6 +8,10 @@ order: 2
 
 ##
 
+### Web
+
+- [HTTP URL Case Sensitivity](~/web/url-case-insensitive.md)
+
 ### Git
 
 - [git diff](~/git/git-diff.md)

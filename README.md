@@ -10,9 +10,10 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 15개)
+### TIL TOC (최근 수정순, 총 16개)
 
 - [Tech_INDEX](docs/Tech/tech_index.md)
+- [HTTP URL Case Sensitivity](docs/Tech/~/web/url-case-insensitive.md)
 - [git diff](docs/Tech/~/git/git-diff.md)
 - [Linux ldd](docs/Tech/~/linux_ldd.md)
 - [Uber-fx DI framework](docs/go/framework/uber-fx-0.md)

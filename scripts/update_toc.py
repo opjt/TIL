@@ -12,18 +12,32 @@ end_marker = "<!-- AUTO_TOC_END -->"
 # --- .md 파일 검색 ---
 md_files = [f for f in docs_dir.rglob("*.md")]
 
-# --- MD 파일 개수 출력 ---
-print(f"총 Markdown 파일 수: {len(md_files)}")
+# --- TOC에 제외할 파일 패턴 ---
+exclude_files = {"index.md", "README.md"}
+
+# --- MD 파일 개수 필터링 ---
+md_files_filtered = []
+for f in md_files:
+    if f.name in exclude_files:
+        continue
+    with open(f, "r", encoding="utf-8") as file:
+        content = file.read()
+        match = re.search(r"^# (.+)$", content, re.MULTILINE)
+        if match and match.group(1).strip().upper() == "README":
+            continue
+    md_files_filtered.append(f)
+
+print(f"총 Markdown 파일 수 (TOC 포함): {len(md_files_filtered)}")
 
 # 파일별 (path, 수정시간) 리스트
-files_with_mtime = [(f, f.stat().st_mtime) for f in md_files]
+files_with_mtime = [(f, f.stat().st_mtime) for f in md_files_filtered]
 
 # 수정시간 기준 내림차순 정렬
 files_sorted = sorted(files_with_mtime, key=lambda x: x[1], reverse=True)
 
 # --- TOC 생성 ---
 toc_lines = [start_marker + "\n"]
-toc_lines.append(f"### TIL TOC (최근 수정순, 총 {len(md_files)}개)\n\n")
+toc_lines.append(f"### TIL TOC (최근 수정순, 총 {len(md_files_filtered)}개)\n\n")
 
 for f, _ in files_sorted:
     with open(f, "r", encoding="utf-8") as file:
@@ -48,5 +62,6 @@ new_content = pattern.sub("".join(toc_lines), content)
 # --- README 갱신 ---
 with open(readme_path, "w", encoding="utf-8") as f:
     f.write(new_content)
+
 subprocess.run(["git", "add", "README.md"])
 print("README.md TOC 갱신 완료!")

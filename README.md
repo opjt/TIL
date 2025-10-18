@@ -10,14 +10,12 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 17개)
+### TIL TOC (최근 수정순, 총 15개)
 
 - [Tech_INDEX](docs/Tech/tech_index.md)
 - [git diff](docs/Tech/~/git/git-diff.md)
-- [README](docs/index.md)
 - [Linux ldd](docs/Tech/~/linux_ldd.md)
 - [Uber-fx DI framework](docs/go/framework/uber-fx-0.md)
-- [Vault](docs/Tech/~/index.md)
 - [도커의 컨테이너 구성 방법](docs/Tech/~/container/container-without-docker.md)
 - [k8s 초기 설정](docs/Tech/~/container/init-install.md)
 - [세션 분산 처리를 위한 설계 고민](docs/Project/push-project/session.md)

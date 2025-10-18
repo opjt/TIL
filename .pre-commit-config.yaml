@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: update-toc
+        name: Update TOC
+        entry: python3 scripts/update_toc.py
+        language: system
+        always_run: true
+        stages: [pre-commit]

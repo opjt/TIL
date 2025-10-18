@@ -4,7 +4,11 @@ order: 2
 
 # Tech_INDEX
 
-> 기술 관련 문서들을 한 곳에서 볼 수 있는 페이지입니다.  
+> 기술 관련 문서들을 한 곳에서 볼 수 있는 페이지입니다.
+
+### Git
+
+- [git diff](~/git/git-diff.md)
 
 ### Container
 
@@ -17,7 +21,7 @@ order: 2
 
 ### General Topics
 
-- [ldd, shared lib](~/linux_ldd.md) - 난 라이브러리 없으면 살 수 없어 
+- [ldd, shared lib](~/linux_ldd.md) - 난 라이브러리 없으면 살 수 없어
 - [DI](~/di.md) — di가 뭐에요?
 - [MSA](~/msa.md) — msa를 알아봅시다
 - [shell](~/shell.md) — 로그인쉘 비로그인쉘 차이를 아시나요

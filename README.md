@@ -10,9 +10,10 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 16개)
+### TIL TOC (최근 수정순, 총 17개)
 
 - [Tech_INDEX](docs/Tech/tech_index.md)
+- [linux su 명령어](docs/Tech/~/linux/linux_su.md)
 - [HTTP URL Case Sensitivity](docs/Tech/~/web/url-case-insensitive.md)
 - [git diff](docs/Tech/~/git/git-diff.md)
 - [Linux ldd](docs/Tech/~/linux_ldd.md)

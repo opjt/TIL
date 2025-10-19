@@ -8,6 +8,10 @@ order: 2
 
 ##
 
+### Linux
+
+- [su -l option](~/linux/linux_su.md)
+
 ### Web
 
 - [HTTP URL Case Sensitivity](~/web/url-case-insensitive.md)

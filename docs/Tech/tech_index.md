@@ -6,8 +6,6 @@ order: 2
 
 > 기술 관련 문서들을 한 곳에서 볼 수 있는 페이지입니다.
 
-##
-
 ### Linux
 
 - [su -l option](~/linux/linux_su.md)
@@ -27,6 +25,7 @@ order: 2
 
 ### Security
 
+- [AES](~/security/aes-crypt.md)
 - [pubkey](~/security/public-key-crypto.md) — 공개키 암호 방식의 이해
 
 ### General Topics

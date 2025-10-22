@@ -10,10 +10,11 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 18개)
+### TIL TOC (최근 수정순, 총 19개)
 
-- [AES crypt](docs/Tech/~/security/aes-crypt.md)
+- [리눅스 특수권한(rws)](docs/Tech/~/linux/rws.md)
 - [Tech_INDEX](docs/Tech/tech_index.md)
+- [AES crypt](docs/Tech/~/security/aes-crypt.md)
 - [linux su 명령어](docs/Tech/~/linux/linux_su.md)
 - [HTTP URL Case Sensitivity](docs/Tech/~/web/url-case-insensitive.md)
 - [git diff](docs/Tech/~/git/git-diff.md)

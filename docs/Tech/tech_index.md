@@ -8,6 +8,7 @@ order: 2
 
 ### Linux
 
+- [rws Permissions](~/linux/rws.md)
 - [su -l option](~/linux/linux_su.md)
 
 ### Web

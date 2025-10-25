@@ -11,7 +11,7 @@ const vitePressOptions: UserConfig = {
   base: '/TIL/',
   lastUpdated: true,
   head: [
-    ['link', {rel: 'icon', href: '/til/favicon.ico'}]
+    ['link', {rel: 'icon', href: '/TIL/favicon.ico'}]
   ],
   themeConfig: {
     nav: [

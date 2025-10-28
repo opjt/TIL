@@ -10,6 +10,7 @@ order: 2
 
 ### Linux
 
+- [ulimit](~/linux/ulimit.md)
 - [rws Permissions](~/linux/rws.md)
 - [su -l option](~/linux/linux_su.md)
 

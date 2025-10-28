@@ -10,8 +10,9 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 20개)
+### TIL TOC (최근 수정순, 총 21개)
 
+- [ulimit](docs/Tech/~/linux/ulimit.md)
 - [Tech_INDEX](docs/Tech/tech_index.md)
 - [switch Remote branch](docs/Tech/~/git/git-switch-remote.md)
 - [비대칭키 암호화 (공개키 암호화)](docs/Tech/~/security/public-key-crypto.md)

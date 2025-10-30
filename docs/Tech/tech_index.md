@@ -9,7 +9,8 @@ order: 2
 ##
 
 ### Network
-- [MTU](~/mtu.md)
+- [RFC](./~/network/rfc.md)
+- [MTU](./~/network/mtu.md)
 
 ### Linux
 

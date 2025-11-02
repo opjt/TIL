@@ -10,8 +10,9 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 24개)
+### TIL TOC (최근 수정순, 총 25개)
 
+- [GOPATH](docs/go/~/basic/gopath.md)
 - [GO_INDEX](docs/go/go_index.md)
 - [Tech_INDEX](docs/Tech/tech_index.md)
 - [RFC (Request for Comments)](docs/Tech/~/network/rfc.md)

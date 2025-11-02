@@ -8,7 +8,8 @@ order: 2
 
 ### Basic
 
-- [Go work](~/Basic/go-work.md)
+- [Go GOPATH](~/basic/gopath.md)
+- [Go work](~/basic/go-work.md)
 
 ### Library
 

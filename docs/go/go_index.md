@@ -6,6 +6,10 @@ order: 2
 
 ##
 
+### Style-guide
+
+- [Verify Interface Compliance(인터페이스 검증)](~/style-guide/verify-interface-compliance.md)
+
 ### Basic
 
 - [Go GOPATH](~/basic/gopath.md)

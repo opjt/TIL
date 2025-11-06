@@ -12,6 +12,7 @@ order: 2
 
 ### Basic
 
+- [fallthrough](~/basic/fallthrough.md)
 - [Go GOPATH](~/basic/gopath.md)
 - [Go work](~/basic/go-work.md)
 

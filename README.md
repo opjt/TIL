@@ -10,8 +10,9 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 28개)
+### TIL TOC (최근 수정순, 총 29개)
 
+- [sysctl](docs/Tech/~/linux/sysctl.md)
 - [Tech_INDEX](docs/Tech/tech_index.md)
 - [Linux ldd](docs/Tech/~/linux/linux_ldd.md)
 - [Uber-fx DI framework](docs/go/~/library/uber-fx-0.md)

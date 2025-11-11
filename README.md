@@ -10,11 +10,11 @@
 ##
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 29개)
+### TIL TOC (최근 수정순, 총 28개)
 
+- [Uber-fx DI framework](docs/go/~/library/uber-fx-0.md)
 - [fallthrough keyword](docs/go/~/basic/fallthrough.md)
 - [GO_INDEX](docs/go/go_index.md)
-- [🧠 Go 기반 리눅스 시스템 개발자 로드맵](docs/.vitepress/.temp/roadmap.md)
 - [Tech_INDEX](docs/Tech/tech_index.md)
 - [Verify Interface Compliance](docs/go/~/style-guide/verify-interface-compliance.md)
 - [CNCF (Cloud Native Computing Foundation)](docs/Tech/~/container/cncf.md)
@@ -30,7 +30,6 @@
 - [HTTP URL Case Sensitivity](docs/Tech/~/web/url-case-insensitive.md)
 - [git diff](docs/Tech/~/git/git-diff.md)
 - [Linux ldd](docs/Tech/~/linux_ldd.md)
-- [Uber-fx DI framework](docs/go/~/library/uber-fx-0.md)
 - [도커의 컨테이너 구성 방법](docs/Tech/~/container/container-without-docker.md)
 - [k8s 초기 설정](docs/Tech/~/container/init-install.md)
 - [세션 분산 처리를 위한 설계 고민](docs/Project/push-project/session.md)

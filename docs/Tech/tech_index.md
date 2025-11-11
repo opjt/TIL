@@ -15,6 +15,7 @@ order: 2
 
 ### Linux
 
+- [ldd, shared lib](~/linux/linux_ldd.md) - 난 라이브러리 없으면 살 수 없어
 - [ulimit](~/linux/ulimit.md)
 - [rws Permissions](~/linux/rws.md)
 - [su -l option](~/linux/linux_su.md)
@@ -41,7 +42,6 @@ order: 2
 
 ### General Topics
 
-- [ldd, shared lib](~/linux_ldd.md) - 난 라이브러리 없으면 살 수 없어
 - [DI](~/di.md) — di가 뭐에요?
 - [MSA](~/msa.md) — msa를 알아봅시다
 - [shell](~/shell.md) — 로그인쉘 비로그인쉘 차이를 아시나요

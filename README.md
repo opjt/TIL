@@ -17,8 +17,11 @@
 - [Building a container from scratch in Go - Liz Rice](https://www.youtube.com/watch?v=Utf-A4rODH8) 컨테이너 런타임
 
 <!-- AUTO_TOC_START -->
-### TIL TOC (최근 수정순, 총 70개)
+### TIL TOC (최근 수정순, 총 71개)
 
+- [c++ 큐 구조](docs/Tech/~/ps/cpp-queue.md)
+- [Uber-fx DI framework](docs/go/~/library/uber-fx-0.md)
+- [Tech_INDEX](docs/Tech/tech_index.md)
 - [CH09 - 살아있는 운영 표준의 탄생](docs/Study/infra-with-claude/ch-09.md)
 - [CH05 - 무중단 배포](docs/Study/infra-with-claude/ch-05.md)
 - [CH08 - 고도화](docs/Study/infra-with-claude/ch-08.md)
@@ -29,7 +32,6 @@
 - [CH02 - 환경 구성](docs/Study/infra-with-claude/ch-02.md)
 - [CH01](docs/Study/infra-with-claude/ch-01.md)
 - [OAuth](docs/Tech/~/security/oauth.md)
-- [Tech_INDEX](docs/Tech/tech_index.md)
 - [OpenID Connect (OIDC)](docs/Tech/~/security/oidc.md)
 - [브라우저에서 웹사이트 접속 과정](docs/Tech/~/network/how_web_works.md)
 - [Kubernetes Architecture](docs/Tech/~/container/k8s-arch.md)
@@ -65,7 +67,6 @@
 - [GO의 TCP 소켓 backlog 이야기](docs/go/~/server/socket-backlog.md)
 - [sysctl](docs/Tech/~/linux/sysctl.md)
 - [Linux ldd](docs/Tech/~/linux/linux_ldd.md)
-- [Uber-fx DI framework](docs/go/~/library/uber-fx-0.md)
 - [fallthrough keyword](docs/go/~/basic/fallthrough.md)
 - [Verify Interface Compliance](docs/go/~/style-guide/verify-interface-compliance.md)
 - [CNCF (Cloud Native Computing Foundation)](docs/Tech/~/container/cncf.md)

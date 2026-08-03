@@ -71,7 +71,9 @@ order: 2
 - [switch Remote branch](~/git/git-switch-remote.md)
 - [git diff](~/git/git-diff.md)
 
-### PS
+### Data structure
+
+- [cpp-queue](~/ps/cpp-queue.md) - c++ 에서 큐 내부구조
 
 > Problem solving (coding challenges)
 

@@ -53,6 +53,7 @@ order: 2
 
 ### General Topics
 
+- [데코레이터와 정의 시점 vs 호출 시점](~/general/python-def-time-vs-call-time.md) - 데코레이터, import, 평가 시점
 - [한글 인코딩](~/general/hangeul-encoding.md) - 콤퓨타는 어떻게 한글을 읽는가?
 - [DI](~/di.md) — di가 뭐에요?
 - [MSA](~/msa.md) — msa를 알아봅시다
